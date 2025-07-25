@@ -1,0 +1,1 @@
+# Infrastructure layer - contains database models and repository implementations 

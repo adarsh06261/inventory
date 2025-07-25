@@ -1,0 +1,1 @@
+# Application layer - contains use cases and business logic 
