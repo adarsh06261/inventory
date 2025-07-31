@@ -9,7 +9,17 @@ const getApiUrl = () => {
   const apiUrl = envUrl || defaultUrl;
   
   // Always ensure HTTPS in production
-  return apiUrl.replace('http://', 'https://');
+  const finalUrl = apiUrl.replace('http://', 'https://');
+  
+  // Debug logging
+  console.log('🔍 API URL Debug:', {
+    envUrl,
+    defaultUrl,
+    apiUrl,
+    finalUrl
+  });
+  
+  return finalUrl;
 };
 
 const api = axios.create({
