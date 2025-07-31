@@ -21,7 +21,11 @@ const Register = () => {
   const password = watch('password');
 
   const onSubmit = async (data) => {
-    const { confirmPassword, ...userData } = data;
+    // Only send fields that backend expects
+    const userData = {
+      username: data.username,
+      password: data.password
+    };
     const result = await registerUser(userData);
     if (result.success) {
       navigate('/dashboard');
