@@ -95,10 +95,10 @@ npm run dev
 
 ### Backend Setup (Python FastAPI)
 
-1. **Create Virtual Environment**
+1. **Navigate to Backend Directory & Create Virtual Environment**
    ```powershell
-   # Navigate to project root
-   cd inventory-pro
+   # Navigate to backend directory
+   cd backend
 
    # Create virtual environment
    python -m venv venv
@@ -143,8 +143,8 @@ npm run dev
 1. **Install Dependencies**
    ```powershell
    cd frontend
-   npm install
-   ```
+npm install
+```
 
 2. **Development Server**
    ```powershell

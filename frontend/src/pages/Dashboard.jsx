@@ -119,13 +119,13 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full blur-2xl"></div>
-          </div>
+      </div>
 
           {/* Primary Stats - 2x2 Grid */}
           <div className="grid grid-cols-2 gap-6">
             {statCards.slice(0, 2).map((stat, index) => {
-              const Icon = stat.icon;
-              return (
+          const Icon = stat.icon;
+          return (
                 <div key={index} className="stats-card group cursor-pointer">
                   <div className="flex items-center justify-between mb-4">
                     <div className={`p-4 rounded-xl bg-gradient-to-r ${stat.gradient} shadow-lg group-hover:shadow-xl transition-all duration-300`}>
@@ -133,7 +133,7 @@ const Dashboard = () => {
                     </div>
                     <ArrowUpRight className="h-5 w-5 text-white/60 group-hover:text-white transition-colors" />
                   </div>
-                  <div>
+                <div>
                     <p className="text-sm font-medium text-white/70 mb-1">{stat.title}</p>
                     <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
                     <p className="text-xs text-white/50">{stat.change}</p>
@@ -213,7 +213,7 @@ const Dashboard = () => {
             <div className="text-center">
               <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 mx-auto w-fit mb-4">
                 <Plus className="h-8 w-8 text-white" />
-              </div>
+            </div>
               <h3 className="font-semibold text-white text-lg mb-2">Add New Product</h3>
               <p className="text-white/70 text-sm">Expand your inventory catalog</p>
             </div>
@@ -339,13 +339,13 @@ const Dashboard = () => {
             <div className="bg-white/5 p-8 rounded-2xl max-w-md mx-auto">
               <Package className="h-16 w-16 text-white/30 mx-auto mb-4" />
               <p className="text-white/70 text-lg mb-4">No products found</p>
-              <Link
-                to="/products"
+            <Link
+              to="/products"
                 className="btn-primary inline-flex items-center space-x-2"
-              >
+            >
                 <Plus className="h-5 w-5" />
-                <span>Add your first product</span>
-              </Link>
+              <span>Add your first product</span>
+            </Link>
             </div>
           </div>
         )}

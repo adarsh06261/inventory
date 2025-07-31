@@ -14,7 +14,7 @@ const NotFound = () => {
       <div className="max-w-2xl w-full text-center relative z-10">
         <div className="glass-card p-12">
           {/* 404 Display */}
-          <div className="mb-8">
+        <div className="mb-8">
             <h1 className="text-9xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent mb-4">
               404
             </h1>
@@ -28,8 +28,8 @@ const NotFound = () => {
             <p className="text-lg text-white/70 max-w-md mx-auto">
               The page you're looking for seems to have vanished into the digital void. 
               Don't worry, even the best explorers sometimes take a wrong turn!
-            </p>
-          </div>
+          </p>
+        </div>
 
           {/* Search Icon Animation */}
           <div className="mb-8">
@@ -39,23 +39,23 @@ const NotFound = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="space-y-4">
-            <Link
+        <div className="space-y-4">
+          <Link
               to="/"
               className="btn-primary inline-flex items-center space-x-3 text-lg px-8 py-4"
-            >
+          >
               <Home className="h-6 w-6" />
               <span>Return Home</span>
-            </Link>
-            
+          </Link>
+          
             <div className="text-center">
-              <button
-                onClick={() => window.history.back()}
+          <button
+            onClick={() => window.history.back()}
                 className="btn-outline inline-flex items-center space-x-2"
-              >
-                <ArrowLeft className="h-5 w-5" />
-                <span>Go Back</span>
-              </button>
+          >
+            <ArrowLeft className="h-5 w-5" />
+            <span>Go Back</span>
+          </button>
             </div>
           </div>
 

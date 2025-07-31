@@ -92,7 +92,7 @@ const Layout = () => {
                 >
                   <div className={clsx(
                     'p-2 rounded-lg mr-3 transition-all duration-200',
-                    isActive 
+                    isActive
                       ? `bg-gradient-to-r ${item.gradient} shadow-lg`
                       : 'bg-white/10 group-hover:bg-white/20'
                   )}>
@@ -121,14 +121,14 @@ const Layout = () => {
               <div className="flex-1">
                 <p className="text-sm font-semibold text-white">{user?.username}</p>
                 <p className="text-xs text-white/60">Administrator</p>
-              </div>
-              <button
-                onClick={handleLogout}
+            </div>
+            <button
+              onClick={handleLogout}
                 className="p-2 hover:bg-red-500/20 rounded-lg transition-colors group"
                 title="Logout"
-              >
+            >
                 <LogOut className="h-4 w-4 text-white/60 group-hover:text-red-400" />
-              </button>
+            </button>
             </div>
           </div>
         </div>
@@ -140,15 +140,15 @@ const Layout = () => {
         <header className="header px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setSidebarOpen(true)}
+            <button
+              onClick={() => setSidebarOpen(true)}
                 className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
-              >
+            >
                 <Menu className="h-6 w-6 text-white" />
-              </button>
+            </button>
               <div>
                 <h2 className="text-lg font-semibold text-white">
-                  {navigation.find(item => item.href === location.pathname)?.name || 'Dashboard'}
+                {navigation.find(item => item.href === location.pathname)?.name || 'Dashboard'}
                 </h2>
                 <p className="text-sm text-white/60">
                   {new Date().toLocaleDateString('en-US', { 

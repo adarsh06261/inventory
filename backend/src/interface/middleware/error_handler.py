@@ -12,7 +12,7 @@ async def http_exception_handler(request: Request, exc: HTTPException):
         content={
             "success": False,
             "message": exc.detail,
-            **({"stack": str(exc)} if os.getenv("NODE_ENV") == "development" else {})
+            **({"stack": str(exc)} if os.getenv("ENV") == "development" else {})
         }
     )
 
@@ -30,7 +30,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
         content={
             "success": False,
             "message": "Validation error: " + "; ".join(error_messages),
-            **({"errors": exc.errors()} if os.getenv("NODE_ENV") == "development" else {})
+            **({"errors": exc.errors()} if os.getenv("ENV") == "development" else {})
         }
     )
 
@@ -42,6 +42,6 @@ async def general_exception_handler(request: Request, exc: Exception):
         content={
             "success": False,
             "message": "Internal server error",
-            **({"stack": str(exc)} if os.getenv("NODE_ENV") == "development" else {})
+            **({"stack": str(exc)} if os.getenv("ENV") == "development" else {})
         }
     ) 

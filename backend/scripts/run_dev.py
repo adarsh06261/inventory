@@ -9,7 +9,7 @@ import os
 
 def run_dev():
     """Run the application in development mode"""
-    os.environ["NODE_ENV"] = "development"
+    os.environ["ENV"] = "development"
     
     try:
         subprocess.run([

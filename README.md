@@ -95,29 +95,34 @@ This project follows **Clean Architecture** principles with clear separation of 
 
 #### Backend Setup
 
-1. **Install Python dependencies**
+1. **Navigate to backend directory**
+   ```bash
+   cd backend
+   ```
+
+2. **Install Python dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Set up environment variables**
+3. **Set up environment variables**
    ```bash
    cp env.example .env
    # Edit .env with your database credentials
    ```
 
-3. **Set up PostgreSQL database**
+4. **Set up PostgreSQL database**
    ```bash
    # Create database
    createdb inventory_db
    ```
 
-4. **Run database migrations**
+5. **Run database migrations**
    ```bash
    alembic upgrade head
    ```
 
-5. **Start the backend server**
+6. **Start the backend server**
    ```bash
    python main.py
    # Or for development with auto-reload:
@@ -167,21 +172,21 @@ The application uses JWT (JSON Web Tokens) for authentication. All product endpo
 3. **Use the token** in the Authorization header for protected endpoints
 
 ### API Usage Example
-```bash
+   ```bash
 # Register a user
-curl -X POST http://localhost:3000/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"username": "testuser", "password": "password123"}'
+   curl -X POST http://localhost:3000/auth/register \
+     -H "Content-Type: application/json" \
+     -d '{"username": "testuser", "password": "password123"}'
 
 # Login to get token
-curl -X POST http://localhost:3000/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"username": "testuser", "password": "password123"}'
+   curl -X POST http://localhost:3000/auth/login \
+     -H "Content-Type: application/json" \
+     -d '{"username": "testuser", "password": "password123"}'
 
 # Use token for protected endpoints
 curl -X GET http://localhost:3000/products \
   -H "Authorization: Bearer YOUR_JWT_TOKEN"
-```
+   ```
 
 ## 🗄️ Database Management
 

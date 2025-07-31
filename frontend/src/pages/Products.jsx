@@ -131,17 +131,17 @@ const Products = () => {
       {/* Header */}
       <div className="gradient-card p-8 relative overflow-hidden">
         <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          <div>
+        <div>
             <h1 className="text-4xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">Products</h1>
             <p className="text-white/70 mt-2 text-lg">Manage your inventory items with style</p>
-          </div>
-          <button
-            onClick={() => setShowAddForm(true)}
-            className="mt-4 sm:mt-0 btn-primary flex items-center space-x-2"
-          >
-            <Plus className="h-5 w-5" />
-            <span>Add Product</span>
-          </button>
+        </div>
+        <button
+          onClick={() => setShowAddForm(true)}
+          className="mt-4 sm:mt-0 btn-primary flex items-center space-x-2"
+        >
+          <Plus className="h-5 w-5" />
+          <span>Add Product</span>
+        </button>
         </div>
         {/* Decorative elements */}
         <div className="absolute top-4 right-4 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
@@ -399,17 +399,17 @@ const Products = () => {
             <div className="bg-white/5 p-8 rounded-2xl max-w-md mx-auto">
               <Package className="h-16 w-16 text-white/30 mx-auto mb-4" />
               <p className="text-white/70 text-lg mb-4">
-                {products.length === 0 ? 'No products found' : 'No products match your filters'}
-              </p>
-              {products.length === 0 && (
-                <button
-                  onClick={() => setShowAddForm(true)}
+              {products.length === 0 ? 'No products found' : 'No products match your filters'}
+            </p>
+            {products.length === 0 && (
+              <button
+                onClick={() => setShowAddForm(true)}
                   className="btn-primary inline-flex items-center space-x-2"
-                >
+              >
                   <Plus className="h-5 w-5" />
-                  <span>Add your first product</span>
-                </button>
-              )}
+                <span>Add your first product</span>
+              </button>
+            )}
             </div>
           </div>
         )}

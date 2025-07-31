@@ -36,7 +36,7 @@ def create_app() -> FastAPI:
     @app.on_event("startup")
     async def startup():
         # Create tables if they don't exist
-        if os.getenv("NODE_ENV") == "development":
+        if os.getenv("ENV") == "development":
             Base.metadata.create_all(bind=engine)
         await database.connect()
 

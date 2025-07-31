@@ -3,7 +3,7 @@
 ## 📁 Directory Structure
 ```
 C:\Projects\inventory-management\
-├── backend\                    # Node.js Backend
+├── backend\                    # Python FastAPI Backend
 ├── frontend\                   # React Frontend  
 ├── docker-compose.yml          # Docker configuration
 └── README.md                   # This file
@@ -28,7 +28,9 @@ You can either:
 ### 3. Setup Backend
 ```cmd
 cd backend
-npm install
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
 copy .env.example .env
 ```
 
@@ -48,7 +50,8 @@ docker-compose up --build
 ```cmd
 # Terminal 1 - Start Backend
 cd backend
-npm run dev
+venv\Scripts\activate
+python main.py
 
 # Terminal 2 - Start Frontend  
 cd frontend
