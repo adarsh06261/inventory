@@ -36,6 +36,12 @@ api.interceptors.request.use(
     // Debug actual request URL
     console.log('🚀 Making request to:', config.url, 'Base:', config.baseURL, 'Full:', config.baseURL + config.url);
     
+    // FORCE HTTPS at request level
+    if (config.baseURL && config.baseURL.startsWith('http://')) {
+      config.baseURL = config.baseURL.replace('http://', 'https://');
+      console.log('🔧 FORCING HTTPS:', config.baseURL);
+    }
+    
     const token = localStorage.getItem('token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
