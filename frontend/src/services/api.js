@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://inventory-api-production-d0f9.up.railway.app',
+  baseURL: (import.meta.env.VITE_API_URL || 'https://inventory-api-production-d0f9.up.railway.app').replace('http://', 'https://'),
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
