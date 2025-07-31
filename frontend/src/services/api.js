@@ -2,8 +2,18 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 // Create axios instance with base configuration
+// Force HTTPS for Railway deployment
+const getApiUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL;
+  const defaultUrl = 'https://inventory-api-production-d0f9.up.railway.app';
+  const apiUrl = envUrl || defaultUrl;
+  
+  // Always ensure HTTPS in production
+  return apiUrl.replace('http://', 'https://');
+};
+
 const api = axios.create({
-  baseURL: (import.meta.env.VITE_API_URL || 'https://inventory-api-production-d0f9.up.railway.app').replace('http://', 'https://'),
+  baseURL: getApiUrl(),
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
