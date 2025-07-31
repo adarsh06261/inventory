@@ -4,7 +4,7 @@ services:
     env: docker
     dockerfilePath: ./backend/Dockerfile
     dockerContext: ./backend
-    plan: free
+    plan: starter
     healthCheckPath: /health
     envVars:
       - key: ENV
@@ -25,7 +25,7 @@ services:
     env: static
     buildCommand: cd frontend && npm ci && npm run build
     staticPublishPath: ./frontend/dist
-    plan: free
+    plan: starter
 
 databases:
   - name: inventory-db
